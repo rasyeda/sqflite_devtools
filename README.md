@@ -5,6 +5,8 @@ for browsing the sqflite databases of a running app — tables and views, their
 schema, paged and filterable data, and an ad-hoc SQL editor — in a full-size
 browser tab instead of a debug screen on the device.
 
+![The sqflite_devtools tab in DevTools: table list on the left, paged data grid on the right](https://raw.githubusercontent.com/rasyeda/sqflite_devtools/main/doc/screenshot.png)
+
 This repository holds two packages:
 
 | Package | Published | What it is |

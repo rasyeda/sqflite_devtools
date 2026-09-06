@@ -21,29 +21,37 @@ class ResultGrid extends StatelessWidget {
     }
 
     final theme = Theme.of(context);
-    return Scrollbar(
-      child: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
+    // The table takes its intrinsic width inside a horizontal scroll view, so
+    // without a minimum it floats in the middle of a wide pane. Stretching it
+    // to at least the viewport width keeps it left-aligned and filling.
+    return LayoutBuilder(
+      builder: (context, constraints) => Scrollbar(
         child: SingleChildScrollView(
-          child: DataTable(
-            headingRowHeight: defaultRowHeight + denseSpacing,
-            dataRowMinHeight: defaultRowHeight,
-            dataRowMaxHeight: defaultRowHeight + denseSpacing,
-            columnSpacing: defaultSpacing * 2,
-            columns: [
-              for (final column in result.columns)
-                DataColumn(
-                  label: Text(column, style: theme.textTheme.titleSmall),
-                ),
-            ],
-            rows: [
-              for (final row in result.rows)
-                DataRow(
-                  cells: [
-                    for (final cell in row) DataCell(_Cell(value: cell)),
-                  ],
-                ),
-            ],
+          scrollDirection: Axis.horizontal,
+          child: SingleChildScrollView(
+            child: ConstrainedBox(
+              constraints: BoxConstraints(minWidth: constraints.maxWidth),
+              child: DataTable(
+                headingRowHeight: defaultRowHeight + denseSpacing,
+                dataRowMinHeight: defaultRowHeight,
+                dataRowMaxHeight: defaultRowHeight + denseSpacing,
+                columnSpacing: defaultSpacing * 2,
+                columns: [
+                  for (final column in result.columns)
+                    DataColumn(
+                      label: Text(column, style: theme.textTheme.titleSmall),
+                    ),
+                ],
+                rows: [
+                  for (final row in result.rows)
+                    DataRow(
+                      cells: [
+                        for (final cell in row) DataCell(_Cell(value: cell)),
+                      ],
+                    ),
+                ],
+              ),
+            ),
           ),
         ),
       ),
