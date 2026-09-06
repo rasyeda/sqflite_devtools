@@ -1,0 +1,11 @@
+name: sqflite_devtools_example
+description: Minimal Dart app that exposes an in-memory database to DevTools.
+publish_to: 'none'
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  sqflite_common_ffi: ^2.3.0
+  sqflite_devtools:
+    path: ../

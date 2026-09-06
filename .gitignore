@@ -1,0 +1,7 @@
+.DS_Store
+.dart_tool/
+.packages
+
+# Local build output of the extension UI. The bundle that ships with the
+# package lives in sqflite_devtools/extension/devtools/build and IS committed.
+sqflite_devtools_extension/build/

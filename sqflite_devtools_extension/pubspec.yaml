@@ -1,0 +1,27 @@
+name: sqflite_devtools_extension
+description: >-
+  Source for the DevTools extension shipped inside the sqflite_devtools
+  package. Build it with:
+  dart run devtools_extensions build_and_copy --source=. --dest=../sqflite_devtools/extension/devtools
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.5.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  devtools_app_shared: ^0.4.0
+  devtools_extensions: ^0.4.0
+  sqflite_devtools:
+    path: ../sqflite_devtools
+  vm_service: '>=14.0.0 <16.0.0'
+
+dev_dependencies:
+  flutter_lints: ^6.0.0
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
