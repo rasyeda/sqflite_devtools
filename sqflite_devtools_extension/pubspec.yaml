@@ -4,7 +4,7 @@ description: >-
   package. Build it with:
   dart run devtools_extensions build_and_copy --source=. --dest=../sqflite_devtools/extension/devtools
 publish_to: 'none'
-version: 0.1.0
+version: 0.1.1
 
 environment:
   sdk: ^3.5.0

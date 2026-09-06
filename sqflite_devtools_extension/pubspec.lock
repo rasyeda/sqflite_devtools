@@ -363,7 +363,7 @@ packages:
       path: "../sqflite_devtools"
       relative: true
     source: path
-    version: "0.1.0"
+    version: "0.1.1"
   sse:
     dependency: transitive
     description:

@@ -2,7 +2,7 @@ name: sqflite_devtools
 description: >-
   A DevTools extension that lets you browse tables, inspect schemas and run
   SQL against the sqflite databases of a running Flutter app.
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/rasyeda/sqflite_devtools
 issue_tracker: https://github.com/rasyeda/sqflite_devtools/issues
 

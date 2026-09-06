@@ -1,5 +1,5 @@
 name: sqflite_devtools
 issueTracker: https://github.com/rasyeda/sqflite_devtools/issues
-version: 0.1.0
+version: 0.1.1
 materialIconCodePoint: '0xe1db'
 requiresConnection: true
