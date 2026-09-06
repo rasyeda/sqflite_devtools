@@ -31,7 +31,9 @@ void main() {
       line,
     ) {
       final match = RegExp(r'http://[^\s]+').firstMatch(line);
-      if (line.contains('Dart VM service') && match != null && !uri.isCompleted) {
+      if (line.contains('Dart VM service') &&
+          match != null &&
+          !uri.isCompleted) {
         uri.complete(Uri.parse(match.group(0)!));
       }
       if (line.trim() == 'ready' && !ready.isCompleted) ready.complete();
@@ -66,7 +68,8 @@ void main() {
   }
 
   test('lists the registered database', () async {
-    final databases = (await call(kListDatabases))['databases']! as List<Object?>;
+    final databases =
+        (await call(kListDatabases))['databases']! as List<Object?>;
     final ref = DatabaseRef.fromJson(databases.single! as Map<String, Object?>);
 
     expect(ref.id, 'example.db');

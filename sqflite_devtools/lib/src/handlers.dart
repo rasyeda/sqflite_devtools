@@ -65,8 +65,7 @@ Future<Map<String, Object?>> handleTableInfo(
         name: name,
         unique: (row['unique'] as int? ?? 0) != 0,
         columns: [
-          for (final member in members)
-            (member['name'] as String?) ?? '?',
+          for (final member in members) (member['name'] as String?) ?? '?',
         ],
       ),
     );

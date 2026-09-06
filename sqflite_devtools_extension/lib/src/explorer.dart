@@ -133,8 +133,8 @@ class _Toolbar extends StatelessWidget {
                 selected.path!,
                 maxLines: 1,
                 overflow: TextOverflow.ellipsis,
-                style: theme.textTheme.bodySmall
-                    ?.copyWith(color: theme.hintColor),
+                style:
+                    theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
               ),
             )
           else
@@ -191,11 +191,13 @@ class _ErrorState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final missingRuntime =
-        error is SqliteClientException && (error as SqliteClientException).isMissingRuntime;
+    final missingRuntime = error is SqliteClientException &&
+        (error as SqliteClientException).isMissingRuntime;
     return _Message(
       icon: missingRuntime ? Icons.link_off : Icons.error_outline,
-      title: missingRuntime ? 'App is not exposing any database' : 'Failed to load databases',
+      title: missingRuntime
+          ? 'App is not exposing any database'
+          : 'Failed to load databases',
       detail: '$error',
       onRetry: onRetry,
     );
@@ -231,7 +233,8 @@ class _Message extends StatelessWidget {
             Text(
               detail,
               textAlign: TextAlign.center,
-              style: theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
+              style:
+                  theme.textTheme.bodySmall?.copyWith(color: theme.hintColor),
             ),
             if (onRetry != null) ...[
               const SizedBox(height: defaultSpacing),

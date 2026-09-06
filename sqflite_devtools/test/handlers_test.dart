@@ -43,7 +43,8 @@ void main() {
   });
 
   test('describes columns, indexes and row count', () async {
-    final info = TableInfo.fromJson(await handleTableInfo(entry(), 'user order'));
+    final info =
+        TableInfo.fromJson(await handleTableInfo(entry(), 'user order'));
 
     expect(info.rowCount, 2);
     expect(info.columns.map((c) => c.name), ['id', 'name']);

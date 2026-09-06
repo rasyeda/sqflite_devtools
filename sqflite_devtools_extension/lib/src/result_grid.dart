@@ -77,8 +77,8 @@ class _Cell extends StatelessWidget {
           maxLines: 1,
           overflow: TextOverflow.ellipsis,
           style: value == null
-              ? theme.textTheme.bodyMedium
-                  ?.copyWith(fontStyle: FontStyle.italic, color: theme.hintColor)
+              ? theme.textTheme.bodyMedium?.copyWith(
+                  fontStyle: FontStyle.italic, color: theme.hintColor)
               : null,
         ),
       ),

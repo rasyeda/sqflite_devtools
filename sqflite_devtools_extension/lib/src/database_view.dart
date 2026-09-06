@@ -59,8 +59,9 @@ class _DatabaseViewState extends State<DatabaseView> {
         final fallback = visible.isNotEmpty
             ? visible.first
             : (tables.isEmpty ? null : tables.first);
-        final selected =
-            _selected != null && tables.contains(_selected) ? _selected : fallback;
+        final selected = _selected != null && tables.contains(_selected)
+            ? _selected
+            : fallback;
 
         return SplitPane(
           axis: Axis.horizontal,
@@ -130,7 +131,9 @@ class _TableList extends StatelessWidget {
                   dense: true,
                   selected: table.name == selected?.name,
                   leading: Icon(
-                    table.isView ? Icons.visibility_outlined : Icons.table_rows_outlined,
+                    table.isView
+                        ? Icons.visibility_outlined
+                        : Icons.table_rows_outlined,
                     size: defaultIconSize,
                   ),
                   title: Text(
